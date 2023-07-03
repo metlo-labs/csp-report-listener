@@ -1,0 +1,34 @@
+name: Build Binary
+
+on:
+  push:
+    branches:    
+      - main
+
+jobs:
+  build-linux-bin:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout Directory
+      - name: Build Docker
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./deploy/Dockerfile_linux_bin
+          push: false
+          tags: linux-build:latest
+      - name: Extract binaries
+        run: |
+          mkdir build
+          id=$(docker create static-linux-build)
+          docker cp $id:/app/csp-service-exec build/csp_service_linux_amd64_latest
+          docker rm -v $id
+      - name: Release
+        uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_bucket: ${{ secrets.AWS_RELEASE_BUCKET }}
+          source_dir: ./build
+          destination_dir: ''

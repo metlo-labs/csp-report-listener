@@ -12,4 +12,4 @@ RUN mv /app/csp-service/target/release/csp-service csp-service-exec
 FROM --platform=linux/amd64 debian:bullseye-slim
 WORKDIR /app
 COPY --from=rust-builder /app/csp-service-exec ./csp-service
-CMD ["/app/csp-service-exec"]
+CMD ["/app/csp-service"]
