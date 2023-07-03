@@ -16,3 +16,9 @@
 [![License](https://img.shields.io/badge/license-MIT-brightgreen)](/LICENSE)
 
 </div>
+
+---
+
+Building a good CSP is hard to do when you have tons of unknown scripts in your infra.
+The easiest way to incrementally build your CSP using the `report-uri` directive and listen for anything that breaks in report only mode.
+Our CSP Reporter makes this easy by storing all CSP report logs and displaying distinct reports you can add to your policy.
