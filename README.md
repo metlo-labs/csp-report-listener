@@ -25,6 +25,8 @@ Our CSP Reporter makes this easy by storing all CSP report logs and displaying d
 
 ![UI Screenshot](https://metlo-api-security-public.s3.us-west-2.amazonaws.com/csp-report-listen-screenshot.png)
 
+Checkout [Metlo API Security](https://www.metlo.com/) for more complete API protection!
+
 ## Setup
 
 ### 1. Install the Service
