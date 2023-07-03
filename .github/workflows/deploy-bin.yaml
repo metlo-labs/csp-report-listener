@@ -21,7 +21,7 @@ jobs:
       - name: Extract binaries
         run: |
           mkdir build
-          id=$(docker create static-linux-build)
+          id=$(docker create linux-build)
           docker cp $id:/app/csp-service-exec build/csp_service_linux_amd64_latest
           docker rm -v $id
       - name: Release
