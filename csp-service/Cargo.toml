@@ -1,0 +1,23 @@
+[package]
+name = "csp-service"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = { version = "0.6.18", features = ["json"] }
+base64 = "0.21.2"
+deadpool-sqlite = { path = "../sqlite" }
+dotenv = "0.15.0"
+duckdb = { version = "0.8.1", features = ["bundled", "r2d2"] }
+hmac = "0.12.1"
+rand = "0.8.5"
+r2d2 = "0.8.10"
+sha2 = "0.10.7"
+tokio = { version = "1.28.2", features = ["macros", "rt-multi-thread", "signal"] }
+serde = { version = "1.0.164", features = ["derive"] }
+chrono = "0.4.26"
+lazy_static = "1.4.0"
+log = "0.4.19"
+env_logger = "0.10.0"

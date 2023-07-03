@@ -1,0 +1,518 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Metlo CSP Report</title>
+  <link rel="stylesheet" href="https://unpkg.com/@blaze/css@12.2.0/dist/blaze/blaze.css">
+  <style>
+    body {
+      font-family: "SF Pro Display", ui-sans-serif, system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .table-row-metlo:hover {
+      background-color: #f3f4f6 !important;
+      cursor: pointer;
+    }
+
+    .grid-heading {
+      font-size: 0.875;
+      font-weight: 500;
+      color: rgb(102, 105, 117);
+      padding-bottom: 0.25rem;
+    }
+  </style>
+</head>
+
+<body style="background-color: rgb(252, 252, 252);">
+  <div style="width: 100vw; position: relative;">
+    <main style="max-width: 1200px; padding: 24px 12px; margin: 0 auto;">
+      <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center;">
+          <svg width="30" height="30" viewBox="0 0 341 341" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M340.46 215.86C340.52 208.63 337.95 204.22 331.86 200.49C315.4 190.43 281.92 169.17 281.92 169.17C299 158.89 315.54 147.72 332.53 137.29C338.34 133.72 340.49 129.43 340.44 122.64C340.17 85.6801 340.11 48.7101 340.45 11.7401C340.54 3.21009 337.96 -0.0199078 329.11 9.22481e-05C291.94 0.0800922 254.71 0.0200922 217.61 0.110092C194.62 0.170092 180.63 12.2201 170.73 33.6201C162.9 11.7001 147.21 0.180092 124.63 0.120092C87.61 0.0200922 49.87 0.0900922 12.49 0.0300922C3.80002 0.0200922 0.930024 3.23009 1.00002 11.8501C1.34002 49.4801 1.29002 87.1101 1.00002 124.74C0.940024 131.97 3.50003 136.39 9.60003 140.11C26.18 150.23 59.54 171.4 59.54 171.43C59.54 171.43 25.92 192.88 8.93002 203.31C3.12002 206.89 0.960024 211.18 1.02002 217.96C1.29002 254.92 1.35002 291.89 1.01002 328.86C0.930024 337.4 3.51002 340.62 12.36 340.61C49.53 340.53 86.49 340.58 123.86 340.5C146.85 340.45 160.84 328.39 170.74 306.99C178.57 328.91 194.26 340.44 216.84 340.49C254.61 340.58 291.6 340.52 328.99 340.58C337.68 340.59 340.55 337.38 340.47 328.76C340.13 291.13 340.19 253.49 340.47 215.86H340.46Z"
+              fill="#424CF9" />
+            <path
+              d="M281.91 169.17L3.85999 2.3104C3.85999 2.3104 5.02999 0.980395 8.53999 0.310395C10.62 -0.0796048 13.82 0.0403952 16.72 0.0303952C24.11 -0.00960484 105.18 0.0903952 105.18 0.0903952L281.9 169.18L281.91 169.17Z"
+              fill="url(#paint0_linear_134_22)" />
+            <path
+              d="M59.51 171.4L337.56 338.26C337.56 338.26 336.4 339.59 332.88 340.26C330.8 340.66 327.6 340.53 324.7 340.55C317.31 340.59 236.24 340.49 236.24 340.49L59.51 171.4Z"
+              fill="url(#paint1_linear_134_22)" />
+            <defs>
+              <linearGradient id="paint0_linear_134_22" x1="142.89" y1="138.59" x2="142.89" y2="-3.6196"
+                gradientUnits="userSpaceOnUse">
+                <stop offset="0.13" stop-color="#172881" />
+                <stop offset="0.17" stop-color="#192987" stop-opacity="0.95" />
+                <stop offset="0.56" stop-color="#2F3CC4" stop-opacity="0.44" />
+                <stop offset="0.85" stop-color="#3C47EA" stop-opacity="0.12" />
+                <stop offset="1" stop-color="#424CF9" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="paint1_linear_134_22" x1="198.54" y1="201.98" x2="198.54" y2="344.19"
+                gradientUnits="userSpaceOnUse">
+                <stop offset="0.13" stop-color="#172881" />
+                <stop offset="0.17" stop-color="#192987" stop-opacity="0.95" />
+                <stop offset="0.56" stop-color="#2F3CC4" stop-opacity="0.44" />
+                <stop offset="0.85" stop-color="#3C47EA" stop-opacity="0.12" />
+                <stop offset="1" stop-color="#424CF9" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <h1 class="c-heading u-super" style="font-weight: 500; padding: 0; margin-left: 12px;">Metlo CSP Service</h1>
+        </div>
+        <div style="cursor: pointer;" onclick="openSettings()">
+          <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 45.973 45.973"
+            xml:space="preserve">
+            <g>
+              <g>
+                <path d="M43.454,18.443h-2.437c-0.453-1.766-1.16-3.42-2.082-4.933l1.752-1.756c0.473-0.473,0.733-1.104,0.733-1.774
+                    c0-0.669-0.262-1.301-0.733-1.773l-2.92-2.917c-0.947-0.948-2.602-0.947-3.545-0.001l-1.826,1.815
+                    C30.9,6.232,29.296,5.56,27.529,5.128V2.52c0-1.383-1.105-2.52-2.488-2.52h-4.128c-1.383,0-2.471,1.137-2.471,2.52v2.607
+                    c-1.766,0.431-3.38,1.104-4.878,1.977l-1.825-1.815c-0.946-0.948-2.602-0.947-3.551-0.001L5.27,8.205
+                    C4.802,8.672,4.535,9.318,4.535,9.978c0,0.669,0.259,1.299,0.733,1.772l1.752,1.76c-0.921,1.513-1.629,3.167-2.081,4.933H2.501
+                    C1.117,18.443,0,19.555,0,20.935v4.125c0,1.384,1.117,2.471,2.501,2.471h2.438c0.452,1.766,1.159,3.43,2.079,4.943l-1.752,1.763
+                    c-0.474,0.473-0.734,1.106-0.734,1.776s0.261,1.303,0.734,1.776l2.92,2.919c0.474,0.473,1.103,0.733,1.772,0.733
+                    s1.299-0.261,1.773-0.733l1.833-1.816c1.498,0.873,3.112,1.545,4.878,1.978v2.604c0,1.383,1.088,2.498,2.471,2.498h4.128
+                    c1.383,0,2.488-1.115,2.488-2.498v-2.605c1.767-0.432,3.371-1.104,4.869-1.977l1.817,1.812c0.474,0.475,1.104,0.735,1.775,0.735
+                    c0.67,0,1.301-0.261,1.774-0.733l2.92-2.917c0.473-0.472,0.732-1.103,0.734-1.772c0-0.67-0.262-1.299-0.734-1.773l-1.75-1.77
+                    c0.92-1.514,1.627-3.179,2.08-4.943h2.438c1.383,0,2.52-1.087,2.52-2.471v-4.125C45.973,19.555,44.837,18.443,43.454,18.443z
+                    M22.976,30.85c-4.378,0-7.928-3.517-7.928-7.852c0-4.338,3.55-7.85,7.928-7.85c4.379,0,7.931,3.512,7.931,7.85
+                    C30.906,27.334,27.355,30.85,22.976,30.85z" />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <h1 class="c-heading u-large" style="font-weight: 500; color: #2D3748;">Violations over Time</h1>
+      <div
+        style="width: 100%; background-color: white; border-width: 1px; border-radius: 0.375rem; padding: 6px; border: solid #E2E8F0;">
+        <canvas id="time-bar-chart" style="width: 100%; height: 300px;"></canvas>
+      </div>
+      <h1 class="c-heading u-large" style="font-weight: 500; margin-top: 20px; color: #2D3748;">Violations</h1>
+      <div
+        style="width: 100%; background-color: white; border-width: 1px; border-radius: 0.375rem; padding: 6px 0; border: solid #E2E8F0;">
+        <table class="c-table">
+          <thead class="c-table__head">
+            <tr class="c-table__row c-table__row--heading">
+              <th class="c-table__cell">First Seen</th>
+              <th class="c-table__cell">Count</th>
+              <th class="c-table__cell">Policy</th>
+              <th class="c-table__cell">Directive</th>
+              <th class="c-table__cell">Blocked URI</th>
+              <th class="c-table__cell">Source File</th>
+            </tr>
+          </thead>
+          <tbody id="distinct-report-table-body" class="c-table__body"></tbody>
+        </table>
+        <div
+          style="display: flex; justify-content: flex-end; align-items: center; width: 100%; margin-top: 12px; padding-right: 6px;">
+          <button id="prev-btn" type="button" class="c-button"
+            style="width: 100px; cursor: pointer; height: 40px">Prev</button>
+          <p id="page-number" style="margin-left: 8px; margin-right: 8px"></p>
+          <button id="next-btn" type="button" class="c-button"
+            style="width: 100px; cursor: pointer; height: 40px">Next</button>
+        </div>
+      </div>
+    </main>
+    <div id="login-container" class="hidden"
+      style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background-color: white;">
+      <div style="max-width: 500px; margin: 50px auto;">
+        <h1 class="c-heading u-large">Login with an API Token</h1>
+        <div class="c-input-group">
+          <div class="o-field">
+            <input class="c-field" id="api-token-input" type="password" required autocomplete="current-password"
+              placeholder="Enter your API Token" />
+          </div>
+          <button type="button" class="c-button" style="cursor: pointer; width: 100px;" onclick="login()">Login</button>
+        </div>
+        <h1 class="c-heading u-large" style="margin-top: 25px;">Generate an API Token with your Secret Key</h1>
+        <div class="c-input-group">
+          <div class="o-field">
+            <input class="c-field" id="api-secret-input" type="password" required autocomplete="off"
+              placeholder="Enter your Secret Key" />
+          </div>
+          <button type="button" class="c-button" style="cursor: pointer; width: 100px;"
+            onclick="newApiToken()">Create</button>
+        </div>
+        <div id="gen-token-container"></div>
+      </div>
+    </div>
+    <div id="settings-container" class="hidden"
+      style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background-color: white;">
+      <div style="max-width: 800px; margin: 50px auto;">
+        <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+          <h1 class="c-heading u-super" style="font-weight: 500; padding: 0;">Settings</h1>
+          <div style="cursor: pointer;" onclick="closeSettings()">
+            <svg fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve">
+              <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+                    c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+                    c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+                    c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+                    l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+                    c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z" />
+            </svg>
+          </div>
+        </div>
+        <h1 class="c-heading u-large">API Keys</h1>
+        <table class="c-table c-table--striped">
+          <thead class="c-table__head">
+            <tr class="c-table__row c-table__row--heading">
+              <th class="c-table__cell">Key Identifier</th>
+              <th class="c-table__cell"></th>
+            </tr>
+          </thead>
+          <tbody id="api-key-table-body" class="c-table__body"></tbody>
+        </table>
+        <button type="button" class="c-button" style="cursor: pointer; width: 100px; margin-top: 10px;" onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js"
+      integrity="sha512-CMF3tQtjOoOJoOKlsS7/2loJlkyctwzSoDK/S40iAB+MqWSaf50uObGQSk5Ny/gfRhRCjNLvoxuCvdnERU4WGg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-adapter-moment/1.0.0/chartjs-adapter-moment.min.js"></script>
+    <script>
+      window.state = {
+        apiToken: localStorage.getItem("apiToken") || "",
+        page: 1,
+        limit: 10,
+      }
+      var LINE_COLORS = [
+        "rgba(255, 99, 132, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+        "rgba(255, 206, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(153, 102, 255, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+        "rgba(94, 205, 160, 0.2)",
+        "rgba(221, 118, 58, 0.2)",
+        "rgba(180, 215, 174, 0.2)",
+        "rgba(221, 200, 165, 0.2)",
+      ]
+      var LINE_BORDER_COLORS = [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)",
+        "rgba(94, 205, 160, 1)",
+        "rgba(221, 118, 58, 1)",
+        "rgba(180, 215, 174, 1)",
+        "rgba(221, 200, 165, 1)",
+      ]
+
+      function resetState() {
+        localStorage.removeItem("apiToken")
+        window.state = {
+          apiToken: "",
+          page: 1,
+          limit: 10,
+        }
+        document.getElementById("login-container").classList.remove("hidden")
+      }
+
+      if (window.state.apiToken == "") {
+        resetState();
+      }
+
+      var distinctReportRowsTemplate = Handlebars.compile(`
+        {{#each distinctReports}}
+          <tr class="c-table__row table-row-metlo" onclick="toggleRow({{this.idx}})" style="background-color: #f9fafb;">
+            <td class="c-table__cell" style="white-space: nowrap; text-overflow: ellipsis; display: block;">{{this.firstSeenShort}}</td>
+            <td class="c-table__cell" style="white-space: nowrap; text-overflow: ellipsis; display: block;">{{this.cnt}}</td>
+            <td class="c-table__cell" style="white-space: nowrap; text-overflow: ellipsis; display: block;">{{this.originalPolicy}}</td>
+            <td class="c-table__cell" style="white-space: nowrap; text-overflow: ellipsis; display: block;">{{this.directive}}</td>
+            <td class="c-table__cell" style="white-space: nowrap; text-overflow: ellipsis; display: block;">{{this.blockedUri}}</td>
+            <td class="c-table__cell" style="white-space: nowrap; text-overflow: ellipsis; display: block;">{{this.sourceFile}}</td>
+          </tr>
+          <tr id="hidden_row{{this.idx}}" class="hidden c-table__row">
+            <td style="width: 100%;">
+              <div style="width: 100%; padding: 24px 12px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+                <div class="o-grid__cell">
+                  <div class="grid-heading">First Seen</div>
+                  <div class="o-grid-text">{{this.firstSeen}}</div>
+                </div>
+                <div class="o-grid__cell">
+                  <div class="grid-heading">Count</div>
+                  <div class="o-grid-text">{{this.cnt}}</div>
+                </div>
+                <div class="o-grid__cell" style="grid-column: span 2;">
+                  <div class="grid-heading">Original Policy</div>
+                  <div class="o-grid-text">{{this.originalPolicy}}</div>
+                </div>
+                <div class="o-grid__cell">
+                  <div class="grid-heading">Directive</div>
+                  <div class="o-grid-text">{{this.directive}}</div>
+                </div>
+                <div class="o-grid__cell">
+                  <div class="grid-heading">Blocked URI</div>
+                  <div class="o-grid-text">{{this.blockedUri}}</div>
+                </div>
+                <div class="o-grid__cell">
+                  <div class="grid-heading">Source File</div>
+                  <div class="o-grid-text">{{this.sourceFile}}</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        {{/each}}
+      `);
+      var apiKeyRowsTemplate = Handlebars.compile(`
+        {{#each apiKeys}}
+          <tr class="c-table__row table-row-metlo" style="align-items: center">
+            <td class="c-table__cell">{{this.prefix}}...</td>
+            <td class="c-table__cell" style="justify-content: end">
+              <button id="{{this.id}}" type="button" class="c-button key-delete-btn"
+                style="width: 70px; cursor: pointer; height: 40px" onclick="deleteApiKey({{this.id}})">
+                Delete
+              </button>
+            </td>
+          </tr>
+        {{/each}}
+      `)
+      var generatedTokenTemplate = Handlebars.compile(`
+        <div>
+          <p>Generated API Token:</p>
+          <p>{{genToken}}</p>
+        </div>
+      `);
+      function setApiToken(token) {
+        window.state.apiToken = token;
+        localStorage.setItem("apiToken", token);
+      }
+      function login() {
+        apiToken = document.getElementById("api-token-input").value;
+        fetch("/api/verify", { headers: { authorization: apiToken } }).then((e) => {
+          setApiToken(apiToken);
+          fetchDistinctReports();
+          fetchViolationCount();
+          fetchApiKeys();
+          document.getElementById("login-container").classList.add("hidden");
+        }).catch((e) => {
+          console.log(e.status);
+        }).finally(() => {
+          document.getElementById("api-token-input").value = "";
+          document.getElementById("gen-token-container").innerHTML = "";
+        })
+      }
+      function logout() {
+        resetState();
+        document.getElementById("settings-container").classList.add("hidden")
+      }
+      function newApiToken() {
+        apiToken = document.getElementById("api-secret-input").value;
+        fetch(
+          "/api/gen-token",
+          { method: "POST", headers: { authorization: apiToken } }
+        ).then(async (e) => {
+          var token = await e.text();
+          var genTokenHTML = generatedTokenTemplate({
+            genToken: token
+          })
+          document.getElementById("gen-token-container").innerHTML = genTokenHTML;
+        }).catch((e) => {
+          console.log(e.status);
+        }).finally(() => {
+          document.getElementById("api-secret-input").value = ""
+        })
+      }
+      function fetchDistinctReports() {
+        let offset = (window.state.page - 1) * window.state.limit;
+        document.getElementById("page-number").innerHTML = `Page ${window.state.page}`;
+        fetch(
+          `/api/distinct-reports?limit=${window.state.limit}&offset=${offset}`,
+          { method: "GET", headers: { authorization: window.state.apiToken } }
+        ).then(async (e) => {
+          if (e.status == 401) {
+            resetState();
+            return;
+          }
+          var data = await e.json();
+          var distinctReportTBody = distinctReportRowsTemplate({
+            distinctReports: data.map((e, i) => ({
+              ...e,
+              firstSeenShort: e.firstSeen.slice(0, 10),
+              directive: e.effectiveDirective || e.violatedDirective,
+              idx: i,
+            }))
+          })
+          document.getElementById("distinct-report-table-body").innerHTML = distinctReportTBody;
+        }).catch((e) => {
+          console.log(e);
+        })
+      }
+      function openSettings() {
+        document.getElementById("settings-container").classList.remove("hidden")
+      }
+      function closeSettings() {
+        document.getElementById("settings-container").classList.add("hidden")
+      }
+      function deleteApiKey(id) {
+        fetch(`/api/token/${id}`, {
+          method: "DELETE",
+          headers: { authorization: window.state.apiToken}
+        })
+          .then(async (e) => {
+            if (e.status == 401) {
+              resetState();
+              return;
+            }
+            var data = await e.json();
+            var apiKeyBody = apiKeyRowsTemplate({
+              apiKeys: data.map((e, i) => ({
+                ...e,
+                idx: i,
+              }))
+            })
+            document.getElementById("api-key-table-body").innerHTML = apiKeyBody;
+          })
+          .catch((e) => {
+            console.log(e);
+          })
+      }
+      function fetchApiKeys() {
+        fetch("/api/tokens", {
+          method: "GET",
+          headers: { authorization: window.state.apiToken }
+        })
+          .then(async (e) => {
+            if (e.status == 401) {
+              resetState();
+              return;
+            }
+            var data = await e.json();
+            var apiKeyBody = apiKeyRowsTemplate({
+              apiKeys: data.map((e, i) => ({
+                ...e,
+                idx: i,
+              }))
+            })
+            document.getElementById("api-key-table-body").innerHTML = apiKeyBody;
+          })
+          .catch((e) => {
+            console.log(e);
+          })
+      }
+      function fetchViolationCount() {
+        fetch("/api/violation-count", {
+          method: "GET",
+          headers: { authorization: window.state.apiToken },
+        })
+          .then(async (e) => {
+            if (e.status == 401) {
+              resetState();
+              return;
+            }
+            var data = await e.json();
+            var labels = [];
+            var dataItems = {};
+            for (const item of data) {
+              labels.push(item.day);
+              for (const violation of Object.keys(item)) {
+                if (violation !== "day") {
+                  if (!dataItems[violation]) {
+                    dataItems[violation] = [];
+                  }
+                  dataItems[violation].push(item[violation]);
+                }
+              }
+            }
+            let datasets = [];
+            Object.keys(dataItems).forEach((key, idx) => {
+              datasets.push({
+                label: key,
+                data: dataItems[key],
+                borderColor: LINE_BORDER_COLORS[idx],
+                backgroundColor:  LINE_COLORS[idx],
+                fill: true,
+              });
+            })
+
+            new Chart(document.getElementById("time-bar-chart"), {
+              type: "line",
+              data: {
+                labels,
+                datasets,
+              },
+              options: {
+                animation: 0,
+                responsive: true,
+                interaction: {
+                  mode: 'index',
+                },
+                plugins: {
+                  legend: {
+                    display: true,
+                  },
+                },
+                scales: {
+                  x: {
+                    type: "timeseries",
+                    grid: {
+                      display: false,
+                    },
+                    ticks: {
+                      source: "labels",
+                      autoSkip: true,
+                      maxTicksLimit: 14,
+                    },
+                    time: {
+                      unit: "day",
+                      tooltipFormat: "yyyy-MM-DD",
+                    },
+                  },
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                    },
+                    ticks: {
+                      precision: 0,
+                    },
+                  },
+                },
+              },
+            });
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      }
+      function toggleRow(idx) {
+        var elem = document.getElementById(`hidden_row${idx}`);
+        if (elem.classList.contains("hidden")) {
+          elem.classList.remove("hidden")
+        } else {
+          elem.classList.add("hidden")
+        }
+      }
+
+      let nextBtn = document.getElementById("next-btn");
+      let prevBtn = document.getElementById("prev-btn");
+      nextBtn.onclick = (event) => {
+        window.state.page += 1;
+        fetchDistinctReports();
+      }
+      prevBtn.onclick = (event) => {
+        if (window.state.page > 1) {
+          window.state.page -= 1;
+          fetchDistinctReports();
+        }
+      }
+      fetchDistinctReports()
+      fetchViolationCount()
+      fetchApiKeys()
+    </script>
+</body>
+
+</html>

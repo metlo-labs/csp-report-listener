@@ -1,0 +1,72 @@
+mod config;
+
+use std::sync::atomic::{AtomicUsize, Ordering};
+
+use deadpool::{
+    async_trait,
+    managed::{self, RecycleError},
+};
+use deadpool_sync::SyncWrapper;
+
+pub use deadpool::managed::reexports::*;
+pub use deadpool_sync::reexports::*;
+pub use rusqlite;
+
+deadpool::managed_reexports!(
+    "rusqlite",
+    Manager,
+    deadpool::managed::Object<Manager>,
+    rusqlite::Error,
+    ConfigError
+);
+
+pub use self::config::{Config, ConfigError};
+
+pub type Connection = Object;
+
+#[derive(Debug)]
+pub struct Manager {
+    config: Config,
+    recycle_count: AtomicUsize,
+    runtime: Runtime,
+}
+
+impl Manager {
+    #[must_use]
+    pub fn from_config(config: &Config, runtime: Runtime) -> Self {
+        Self {
+            config: config.clone(),
+            recycle_count: AtomicUsize::new(0),
+            runtime,
+        }
+    }
+}
+
+#[async_trait]
+impl managed::Manager for Manager {
+    type Type = SyncWrapper<rusqlite::Connection>;
+    type Error = rusqlite::Error;
+
+    async fn create(&self) -> Result<Self::Type, Self::Error> {
+        let path = self.config.path.clone();
+        SyncWrapper::new(self.runtime, move || rusqlite::Connection::open(path)).await
+    }
+
+    async fn recycle(&self, conn: &mut Self::Type) -> managed::RecycleResult<Self::Error> {
+        if conn.is_mutex_poisoned() {
+            return Err(RecycleError::Message(
+                "Mutex is poisoned. Connection is considered unusable.".into(),
+            ));
+        }
+        let recycle_count = self.recycle_count.fetch_add(1, Ordering::Relaxed);
+        let n: usize = conn
+            .interact(move |conn| conn.query_row("SELECT $1", [recycle_count], |row| row.get(0)))
+            .await
+            .map_err(|e| RecycleError::Message(format!("{}", e)))??;
+        if n == recycle_count {
+            Ok(())
+        } else {
+            Err(RecycleError::StaticMessage("Recycle count mismatch"))
+        }
+    }
+}

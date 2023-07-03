@@ -1,0 +1,5 @@
+.env
+target/
+test.db
+*.duckdb
+*.duckdb.wal

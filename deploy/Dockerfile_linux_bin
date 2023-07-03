@@ -1,0 +1,15 @@
+FROM quay.io/pypa/manylinux2014_x86_64
+
+RUN yum update -y
+RUN yum install curl gcc-c++ -y
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH /root/.cargo/bin:$PATH
+
+WORKDIR /app
+COPY ../../csp-service/ csp-service
+COPY ../../sqlite/ sqlite
+RUN cd csp-service && cargo build --release
+RUN mv /app/csp-service/target/release/csp-service csp-service-exec
+
+CMD ["sleep", "10"]
