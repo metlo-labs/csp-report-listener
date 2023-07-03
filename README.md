@@ -12,7 +12,7 @@
 
 [![Prs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields)](http://makeapullrequest.com)
 [![Join Discord Server](https://img.shields.io/badge/discord%20community-join-blue)](https://discord.gg/4xhumff9BX)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/metlo-labs/csp-report-listener/build.yml?branch=main)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/metlo-labs/csp-report-listener/deploy-docker.yaml?branch=main)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen)](/LICENSE)
 
 </div>
@@ -22,3 +22,5 @@
 Building a good CSP is hard to do when you have tons of unknown scripts in your infra.
 The easiest way to incrementally build your CSP using the `report-uri` directive and listen for anything that breaks in report only mode.
 Our CSP Reporter makes this easy by storing all CSP report logs and displaying distinct reports you can add to your policy.
+
+![UI Screenshot](https://metlo-api-security-public.s3.us-west-2.amazonaws.com/csp-report-listen-screenshot.png)
