@@ -19,7 +19,7 @@
 
 ---
 
-Building a good CSP is hard to do when you have tons of unknown scripts in your infra.
+Building a good CSP is hard to do when you have tons of unknown scripts across your web apps.
 The easiest way to incrementally build your CSP using the `report-uri` directive and listen for anything that breaks in report only mode.
 Our CSP Reporter makes this easy by storing all CSP report logs and displaying distinct reports you can add to your policy.
 
